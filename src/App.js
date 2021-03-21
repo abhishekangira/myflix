@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import FavouritesPage from "./pages/FavouritesPage";
 
 const Page = styled.div`
   padding: 2rem;
@@ -14,16 +16,18 @@ const Wrapper = styled.div`
 `;
 
 function App() {
+  const [country, setCountry] = useState("GB");
+  const [favourites, setFavourites] = useState([]);
   return (
     <Wrapper>
-      <Navbar />
+      <Navbar country={country} setCountry={setCountry} />
       <Page>
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <HomePage favourites={favourites} setFavourites={setFavourites} country={country} />
           </Route>
           <Route path="/favourites">
-            <h1>Favs</h1>
+            <FavouritesPage favourites={favourites} setFavourites={setFavourites} />
           </Route>
         </Switch>
       </Page>

@@ -93,7 +93,7 @@ const LazyLoadImage = styled(UnstyledLazyLoadImage)`
 export default function ShowCard(show) {
   const [isFav, setIsFav] = useState(show.isFav);
   const [btnText, setBtnText] = useState(
-    show.isFav === 'true' ? "REMOVE FROM FAVOURITES" : "ADD TO FAVOURITES"
+    show.isFav === "true" ? "REMOVE FROM FAVOURITES" : "ADD TO FAVOURITES"
   );
   return (
     <Wrapper>
@@ -105,7 +105,7 @@ export default function ShowCard(show) {
         <Tags>
           <Tag text={show.language} />
           {Array.isArray(show.genres) ? (
-            show.genres.map((genre) => <Tag text={genre} dark="true" />)
+            show.genres.map((genre, i) => <Tag key={genre + i} text={genre} dark="true" />)
           ) : (
             <Tag text={show.genres} dark="true" />
           )}
@@ -116,9 +116,16 @@ export default function ShowCard(show) {
             if (isFav === "false") {
               setBtnText("REMOVE FROM FAVOURITES");
               setIsFav("true");
+              show.setFavourites((prev) => [...prev, show.show]);
             } else {
               setBtnText("ADD TO FAVOURITES");
               setIsFav("false");
+              show.setFavourites((prev) => {
+                const newList = [...prev];
+                const objToBeDeleted = newList.find((obj) => obj.id === show.id);
+                newList.splice(newList.indexOf(objToBeDeleted), 1);
+                return newList;
+              });
             }
           }}
           isRed={isFav}

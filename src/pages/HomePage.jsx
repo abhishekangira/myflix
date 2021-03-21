@@ -1,18 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import NowShowing from "../components/NowShowing";
+import ShowCardList from "../components/ShowCardList";
+import Title from "../components/Title";
+import getCountryName from "../utils/getCountryName";
 
-export default function HomePage() {
-  const [nowShowingList, setNowShowingList] = useState([]);
+export default function HomePage({ country, favourites, setFavourites }) {
+  const [showCardList, setShowCardList] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("http://api.tvmaze.com/schedule?country=US");
-      setNowShowingList(response.data);
+      const response = await axios.get(`http://api.tvmaze.com/schedule?country=${country}`);
+      setShowCardList(response.data);
       console.log(response.data);
     })();
-  }, []);
+  }, [country]);
 
-  return <NowShowing list={nowShowingList} />;
+  return (
+    <>
+      <Title>Now Showing in {getCountryName(country)}</Title>
+      <ShowCardList setFavourites={setFavourites} favourites={favourites} list={showCardList} />
+    </>
+  );
 }

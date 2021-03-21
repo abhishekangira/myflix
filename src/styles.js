@@ -1,4 +1,4 @@
-import { createGlobalStyle, styled } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
 // export const GlobalStyle = styled.div`
@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 
   html {
