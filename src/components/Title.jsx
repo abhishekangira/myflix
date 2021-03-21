@@ -6,5 +6,5 @@ const H1 = styled.h1`
 `;
 
 export default function Title({ children }) {
-  return <H1>{children}</H1>;
+  return <H1 title="Card Title">{children}</H1>;
 }

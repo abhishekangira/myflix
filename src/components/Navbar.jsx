@@ -104,6 +104,7 @@ export default function Navbar({ country, setCountry }) {
         {regionMenuVisible && (
           <RegionMenu scrolled={scrolled}>
             <button
+              title="US button"
               onClick={() => {
                 setCountry("US");
                 setRegionMenuVisible(false);
