@@ -2,7 +2,7 @@
 
 **MyFlix** is a modern React app built on top of [TV Maze\'s api](http://https://www.tvmaze.com/api "TV Maze's api").
 
-#### --> Website Link <--
+#### --> [Website Link](https://myflix-mocha.vercel.app/) <--
 
 ### Features :
 - Choose region of choice (US, GB, CN, AU or JP)
