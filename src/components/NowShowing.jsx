@@ -1,4 +1,4 @@
-import NowShowingCard from "./NowShowingCard";
+import ShowCard from "./ShowCard";
 import styled from "styled-components";
 
 const Title = styled.h1`
@@ -20,19 +20,18 @@ export default function NowShowing({ list }) {
     <div>
       <Title>Now Showing in USA</Title>
       <List>
-        {list.map(({ show, season, summary }, index, arr) => {
+        {list.map(({ show }) => {
           showHash[show.id] = showHash[show.id] === true ? false : true;
           return (
             showHash[show.id] && (
-              <NowShowingCard
-                key={arr[index].id}
-                img={show.image.medium}
+              <ShowCard
+                key={show.id}
+                img={show.image?.medium}
                 name={show.name}
                 laguage={show.language}
                 rating={show.rating.average}
-                summary={summary}
-                type={show.type}
-                season={season}
+                summary={show.summary}
+                genres={show.genres}
               />
             )
           );

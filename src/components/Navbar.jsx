@@ -19,6 +19,7 @@ const Nav = styled.nav`
       height: 2rem;
       padding: 1.5rem;
       width: calc(100% - 3rem);
+      box-shadow: 0 0 1rem .2rem rgba(0, 0, 0, 0.3);
     `}
   backdrop-filter: blur(5px) saturate(100%) contrast(50%) brightness(120%);
   position: fixed;
