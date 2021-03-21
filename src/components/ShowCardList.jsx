@@ -28,7 +28,7 @@ export default function ShowCardList({ list, favourites, setFavourites }) {
               rating={show.rating.average?.toFixed(1)}
               summary={show.summary}
               genres={show.genres.length ? show.genres : "Regular"}
-              isFav={favourites.includes(show).toString()}
+              isFav={favourites.find(obj => obj.id === show.id) ? 'true' : 'false'}
               setFavourites={setFavourites}
             />
           )
