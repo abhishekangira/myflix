@@ -10,7 +10,7 @@ export default function HomePage({ country, favourites, setFavourites }) {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get(`http://api.tvmaze.com/schedule?country=${country}`);
+      const response = await axios.get(`https://api.tvmaze.com/schedule?country=${country}`);
       setShowCardList(response.data);
       console.log(response.data);
     })();
