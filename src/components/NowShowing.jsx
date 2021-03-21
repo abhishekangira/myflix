@@ -15,9 +15,9 @@ const List = styled.div`
 `;
 
 export default function NowShowing({ list }) {
-  const showHash = {}
+  const showHash = {};
   return (
-    <div>
+    <section>
       <Title>Now Showing in USA</Title>
       <List>
         {list.map(({ show }) => {
@@ -28,15 +28,16 @@ export default function NowShowing({ list }) {
                 key={show.id}
                 img={show.image?.medium}
                 name={show.name}
-                laguage={show.language}
-                rating={show.rating.average}
+                language={show.language}
+                rating={show.rating.average?.toFixed(1)}
                 summary={show.summary}
-                genres={show.genres}
+                genres={show.genres.length ? show.genres : "Regular"}
+                isFav="false"
               />
             )
           );
         })}
       </List>
-    </div>
+    </section>
   );
 }

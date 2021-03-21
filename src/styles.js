@@ -5,6 +5,12 @@ import { normalize } from "styled-normalize";
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
 
+  *, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
   html {
     font-size: 62.5%;
     background-color: var(--color-bg);

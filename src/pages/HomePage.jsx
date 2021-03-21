@@ -10,13 +10,9 @@ export default function HomePage() {
     (async () => {
       const response = await axios.get("http://api.tvmaze.com/schedule?country=US");
       setNowShowingList(response.data);
-      console.log(response.data)
+      console.log(response.data);
     })();
   }, []);
 
-  return (
-    <div>
-      <NowShowing list={nowShowingList} />
-    </div>
-  );
+  return <NowShowing list={nowShowingList} />;
 }

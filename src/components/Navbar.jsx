@@ -9,22 +9,21 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 4rem);
-  transition: all 0.5s ease;
+  width: 100%;
+  transition: 1s;
   background-color: rgba(255, 255, 255, 0.2);
   ${({ scrolled }) =>
     scrolled &&
     css`
       background-color: rgba(255, 255, 255, 0.7);
       height: 2rem;
-      padding: 1.5rem;
-      width: calc(100% - 3rem);
+      padding: 2rem 1.5rem;
       box-shadow: 0 0 1rem .2rem rgba(0, 0, 0, 0.3);
     `}
   backdrop-filter: blur(5px) saturate(100%) contrast(50%) brightness(120%);
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 10;
 `;
 
 const Logo = styled.img`
