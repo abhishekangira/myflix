@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import HomePage from "./pages/HomePage";
 
-it("onClick", () => {
+it("check proper title on render", () => {
   render(
     <BrowserRouter>
       <App />
