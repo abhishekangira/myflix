@@ -12,5 +12,5 @@ it("check proper title on render", () => {
   const { queryAllByTitle } = render(<HomePage />);
   const title = queryAllByTitle("Card Title");
   const initialTitle = title[0].innerHTML;
-  expect(initialTitle).toBe("Now Showing in Britain");
+  expect(initialTitle).toBe("Now Showing in United States");
 });
