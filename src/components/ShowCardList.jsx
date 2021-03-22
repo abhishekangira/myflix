@@ -15,7 +15,7 @@ export default function ShowCardList({ list, favourites, setFavourites }) {
     <List>
       {list.map((obj) => {
         const show = "show" in obj ? obj.show : obj;
-        showHash[show.id] = showHash[show.id] === true ? false : true;
+        showHash[show.id] = show.id in showHash ? false : true;
         return (
           showHash[show.id] && (
             <ShowCard
@@ -28,7 +28,7 @@ export default function ShowCardList({ list, favourites, setFavourites }) {
               rating={show.rating.average?.toFixed(1)}
               summary={show.summary}
               genres={show.genres.length ? show.genres : "Regular"}
-              isFav={favourites.find(obj => obj.id === show.id) ? 'true' : 'false'}
+              isFav={favourites.find((obj) => obj.id === show.id) ? "true" : "false"}
               setFavourites={setFavourites}
             />
           )

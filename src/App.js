@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `;
 
 function App() {
-  const [country, setCountry] = useState("GB");
+  const [country, setCountry] = useState("US");
   const [favourites, setFavourites] = useState([]);
   return (
     <Wrapper>
