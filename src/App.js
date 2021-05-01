@@ -1,5 +1,6 @@
+
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -18,6 +19,16 @@ const Wrapper = styled.div`
 function App() {
   const [country, setCountry] = useState("US");
   const [favourites, setFavourites] = useState([]);
+
+  const handleClick = () => {
+    window.top.postMessage("myflix", "*");
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", handleClick);
+    return () => window.removeEventListener("click", handleClick);
+  }, []);
+
   return (
     <Wrapper>
       <Navbar country={country} setCountry={setCountry} />
