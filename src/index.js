@@ -5,8 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { GlobalStyle } from "./styles";
 
-console.clear();
-
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />

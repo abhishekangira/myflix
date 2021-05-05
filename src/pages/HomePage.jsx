@@ -12,7 +12,6 @@ export default function HomePage({ country, favourites, setFavourites }) {
     (async () => {
       const response = await axios.get(`https://api.tvmaze.com/schedule?country=${country}`);
       setShowCardList(response.data);
-      console.log(response.data);
     })();
   }, [country]);
 
