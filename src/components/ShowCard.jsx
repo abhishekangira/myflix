@@ -45,7 +45,7 @@ const TitleRating = styled.div`
 
 const Title = styled.span`
   font-weight: 500;
-  font-size: calc(var(--font-size) + 0.5rem);
+  font-size: var(--font-size-l);
   max-width: 80%;
 `;
 
@@ -56,7 +56,7 @@ const Rating = styled.span`
   padding: 0.5rem;
   border-radius: 5px;
   font-weight: 600;
-  font-size: calc(var(--font-size) - 0.5rem);
+  font-size: var(--font-size-m);
 `;
 
 const Tags = styled.span`
@@ -66,9 +66,9 @@ const Tags = styled.span`
 `;
 
 const Summary = styled.div`
-  font-size: calc(var(--font-size) - 0.3rem);
+  font-size: var(--font-size-m);
   line-height: 1.5rem;
-  height: 16rem;
+  margin: 1rem 0;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -80,13 +80,13 @@ const Summary = styled.div`
 const ImgContainer = styled.div`
   transition: 1s;
   transform-origin: left;
-  height: 32rem;
+  height: calc(var(--card-size) + 6rem);
 `;
 
 const LazyLoadImage = styled(UnstyledLazyLoadImage)`
-  width: var(--card-size-m);
+  width: var(--card-size);
   border-radius: 0 15px 15px 0;
-  height: 32rem;
+  height: calc(var(--card-size) + 6rem);
   z-index: 2;
 `;
 

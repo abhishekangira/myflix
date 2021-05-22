@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const List = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--card-size-m), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-size), 1fr));
   gap: 3rem;
   justify-items: center;
   margin-top: 3rem;
